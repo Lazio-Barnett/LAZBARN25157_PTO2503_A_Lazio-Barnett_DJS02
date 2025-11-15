@@ -11,14 +11,16 @@ export const createGrid = () => {
 
   return {
     /**
-     * Renders a list of podcast cards into the grid.
-     * @param {Object[]} podcastList - Array of podcast objects.
+     * Render a list of podcast objects using <podcast-preview>.
+     * @param {Array<Object>} list
      */
-    render(podcastList) {
+    render(list) {
       container.innerHTML = "";
-      podcastList.forEach((p) => {
-        const card = createPodcastCard(p, createModal.open);
-        container.appendChild(card);
+      list.forEach((p) => {
+        const el = document.createElement("podcast-preview");
+        // .data reflects key fields back to attributes (stateless API)
+        el.data = p;
+        container.appendChild(el);
       });
     },
   };
