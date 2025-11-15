@@ -41,7 +41,9 @@ export const createModal = (() => {
       .map(
         (s, index) => `
           <li class="season-item">
-            <strong class="season-title">Season ${index + 1}: ${s.title}</strong>
+            <strong class="season-title">Season ${index + 1}: ${
+          s.title
+        }</strong>
             <span class="episodes">${s.episodes} episodes</span>
           </li>
         `
